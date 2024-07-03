@@ -42,4 +42,23 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 1em;
+  width: 100%;
+}
+
+.task-button button {
+  border: none;
+  background-color: transparent;
+  font-size: 28px;
+  color: rgb(223, 67, 93);
+  font-weight: bold;
+}
+
+.fa-circle-check,
+.fa-rotate-left {
+  padding-right: 15px;
+}
+
+.task-done {
+  text-decoration: line-through;
+  background-color: rgb(213, 210, 210);
 }
