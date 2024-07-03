@@ -29,14 +29,14 @@ function render() {
         <button onClick='toggleComplete("${taskList[i].id}")'> 
         <i class="fa-solid fa-rotate-left"></i>
         </button>
-        <button onclick='deleteTask()'><i class="fa-regular fa-trash-can"></i></button></div>
+        <button onclick='deleteTask("${taskList[i].id}")'><i class="fa-regular fa-trash-can"></i></button></div>
       </div>`;
     } else {
       resultHtml += `<div class="task">
       <div>${taskList[i].taskContent}</div>
       <div class='task-button'>
       <button onClick='toggleComplete("${taskList[i].id}")'> <i class="fa-solid fa-circle-check"></i></button> 
-      <button onclick='deleteTask()'><i class="fa-regular fa-trash-can"></i></button></div>
+      <button onclick='deleteTask("${taskList[i].id}")'><i class="fa-regular fa-trash-can"></i></button></div>
     </div>`;
     }
   }
@@ -57,8 +57,14 @@ function toggleComplete(id) {
   console.log(taskList);
 }
 
-function deleteTask() {
-  console.log('삭제하자');
+function deleteTask(id) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id === id) {
+      taskList.splice(i, 1);
+      break;
+    }
+  }
+  render();
 }
 
 function randomIDGenerate() {
