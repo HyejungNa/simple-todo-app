@@ -8,7 +8,7 @@ body {
 
 .container {
   min-height: 95vh;
-  margin-top: 10px;
+  margin-top: 15px;
   background-color: white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -109,5 +109,20 @@ h1 {
 @media screen and (max-width: 768px) {
   .container {
     width: 85%;
+  }
+
+  .task-button button {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .task {
+    font-size: 17px;
+  }
+
+  .task-button {
+    display: flex;
+    flex-direction: row;
   }
 }
