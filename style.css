@@ -72,6 +72,7 @@ h1 {
   /* left: 0px;
   top: 52px; */
   padding: 0px;
+  transition: 0.5s;
 }
 
 .task {
