@@ -1,9 +1,15 @@
 let taskInput = document.getElementById('task-input');
 let addButton = document.getElementById('add-button');
 let tabs = document.querySelectorAll('.task-tabs div');
+let underLine = document.getElementById('under-line');
+let taskTabs = document.querySelectorAll('.task-tabs div');
 let taskList = [];
 let mode = 'all';
 let filterList = [];
+
+taskTabs.forEach((tabs) =>
+  tabs.addEventListener('click', (e) => tabsIndicator(e))
+);
 
 addButton.addEventListener('click', addTask);
 taskInput.addEventListener('keydown', function (event) {
@@ -17,6 +23,13 @@ for (let i = 1; i < tabs.length; i++) {
   tabs[i].addEventListener('click', function (event) {
     filter(event);
   });
+}
+
+function tabsIndicator(e) {
+  underLine.style.left = e.currentTarget.offsetLeft + 'px';
+  underLine.style.width = e.currentTarget.offsetWidth + 'px';
+  underLine.style.top =
+    e.currentTarget.offsetTop + e.currentTarget.offsetHeight + 'px';
 }
 
 function addTask() {

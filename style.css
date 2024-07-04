@@ -66,11 +66,11 @@ h1 {
 
 #under-line {
   height: 4px;
-  width: 30%;
+  /* width: 30%; */
   background-color: rgb(46, 187, 140);
   position: absolute;
-  left: 0px;
-  top: 52px;
+  /* left: 0px;
+  top: 52px; */
   padding: 0px;
 }
 
