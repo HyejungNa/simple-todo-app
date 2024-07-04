@@ -6,6 +6,12 @@ let mode = 'all';
 let filterList = [];
 
 addButton.addEventListener('click', addTask);
+taskInput.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    addTask();
+  }
+});
+// 인풋창에 enter입력시 아이템 추가하기
 
 for (let i = 1; i < tabs.length; i++) {
   tabs[i].addEventListener('click', function (event) {
@@ -79,9 +85,17 @@ function toggleComplete(id) {
 }
 
 function deleteTask(id) {
+  // deleteTask() 함수가 taskList에서만 삭제하고있어 모든 탭에서 작업이 삭제되지 않음
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id === id) {
       taskList.splice(i, 1);
+      break;
+    }
+  }
+  // deleteTask() 함수를 filterList에서도 사용하여 삭제하면 다른탭에서도 삭제가 가능
+  for (let i = 0; i < filterList.length; i++) {
+    if (filterList[i].id === id) {
+      filterList.splice(i, 1);
       break;
     }
   }
